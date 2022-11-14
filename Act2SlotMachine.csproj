@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>slotmachine-logo-jd.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\banana.png" />
+    <None Remove="Images\cherry.png" />
+    <None Remove="Images\confetti.gif" />
+    <None Remove="Images\dice.png" />
+    <None Remove="Images\grape.png" />
+    <None Remove="Images\melon.png" />
+    <None Remove="Images\orange.png" />
+    <None Remove="Images\seven.png" />
+    <None Remove="Media\backroundgame.mp4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="slotmachine-logo-jd.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\banana.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\cherry.png" />
+    <Resource Include="Images\dice.png" />
+    <Resource Include="Media\backroundgame.mp4" />
+    <Resource Include="UserControls\confetti.gif" />
+    <Resource Include="Images\grape.png" />
+    <Resource Include="Images\melon.png" />
+    <Resource Include="Images\orange.png" />
+    <Resource Include="Images\seven.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Media\SoundRes.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SoundRes.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Media\SoundRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SoundRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
